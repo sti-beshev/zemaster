@@ -1,5 +1,12 @@
 package com.zemaster.ui;
 
-public class MainController {
+import com.zemaster.controllers.FileController;
 
+public class MainController 
+{
+	
+	public void menuFileClosePressed()
+	{
+		FileController.getInstance().closeWindow();
+	}
 }
