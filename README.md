@@ -8,6 +8,7 @@ This is a JavaFX app for a learning course.
 * For Eclipse install 'e(fx)clipse' plugin.
 * Install 'JavaFX Scene Builder'.
 * For Eclipse set the 'JavaFX Scene Builder' executable in windows >> Preferences >> JavaFX.
+* For Eclipse add the JavaFX lib to the build path to use JavaFX css.
 
 ## Other steps
 
