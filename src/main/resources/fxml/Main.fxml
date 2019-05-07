@@ -24,7 +24,7 @@
       			</menus>
       		</MenuBar>
             <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-            <TextField />
+            <TextField fx:id="commandLineTextField" />
          </children>
       </VBox>
 	</children>
