@@ -1,6 +1,6 @@
 .root
 {
-	-fx-background-color: #333333; 
+	-fx-background-color: #808080; 
 }
 
 .menu-bar
@@ -41,6 +41,22 @@
 .menu-item:focused .label
 {
     -fx-font-weight: bold;
+}
+
+.text-area .content
+{
+	-fx-background-color: #333333;
+	-fx-text-fill: white;
+}
+
+.text-field
+{
+	-fx-background-color: #4d4d4d;
+	-fx-text-fill: white;
+	-fx-font-size: 20;
+	-fx-font-weight: bold;
+	-fx-border-radius: 30 30 30 30;
+    -fx-background-radius: 30 30 30 30;
 }
 
 /* main #333333 */
