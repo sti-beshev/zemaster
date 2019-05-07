@@ -24,6 +24,7 @@ public class Zemaster extends Application
 		Parent mainParent = FXMLLoader.load(getClass().getResource("/Main.fxml"));
 
 		Scene scene = new Scene(mainParent, 800, 600);
+		scene.getStylesheets().add("main.css");
 
 		primaryStage.setScene(scene);
 

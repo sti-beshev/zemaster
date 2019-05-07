@@ -1,0 +1,49 @@
+.root
+{
+	-fx-background-color: #333333; 
+}
+
+.menu-bar
+{
+	-fx-background-color: #808080;
+}
+
+.context-menu 
+{
+	-fx-background-color: #808080;
+}
+
+.menu
+{
+	-fx-background-color: #808080;
+}
+
+.menu .label
+{
+	-fx-text-fill: white;
+}
+
+.menu:hover .label
+{
+	-fx-font-weight: bold;
+}
+
+.menu-item
+{
+	-fx-background-color: #808080;
+}
+
+.menu-item .label
+{	
+	-fx-text-fill: white;
+}
+
+.menu-item:focused .label
+{
+    -fx-font-weight: bold;
+}
+
+/* main #333333 */
+/* orange #D96C06 */
+/* gray #F5EFED */
+/* green 73937E */
