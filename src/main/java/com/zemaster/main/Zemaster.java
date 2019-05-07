@@ -21,10 +21,10 @@ public class Zemaster extends Application
 	{
 		primaryStage.setTitle("Zemaster");
 
-		Parent mainParent = FXMLLoader.load(getClass().getResource("/Main.fxml"));
+		Parent mainParent = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
 
 		Scene scene = new Scene(mainParent, 800, 600);
-		scene.getStylesheets().add("main.css");
+		scene.getStylesheets().add("css/main.css");
 
 		primaryStage.setScene(scene);
 
