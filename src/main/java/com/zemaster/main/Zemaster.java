@@ -1,5 +1,7 @@
 package com.zemaster.main;
 
+import com.zemaster.command.CommandMaster;
+import com.zemaster.controllers.CommandLineController;
 import com.zemaster.controllers.FileController;
 
 import javafx.application.Application;
@@ -32,5 +34,12 @@ public class Zemaster extends Application
 
 		FileController.getInstance().setStage(primaryStage);
 
+		initSystem();
+
+	}
+
+	private void initSystem()
+	{
+		CommandLineController.getInstance().setCommander(new CommandMaster());
 	}
 }
