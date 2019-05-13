@@ -22,7 +22,12 @@ public class CommandsLibrarian implements CommandsLibrary
 	@Override
 	public Command getCommand(String commandName)
 	{
-		return commandsList.get(commandName);
+		Command command = commandsList.get(commandName);
+		
+		if(command == null)
+			command = new NotFoundCommand(commandName);
+		
+		return command;
 	}
 
 	public static CommandsLibrary getInstance()
@@ -31,6 +36,38 @@ public class CommandsLibrarian implements CommandsLibrary
 			commandsLibrarian = new CommandsLibrarian();
 
 		return commandsLibrarian;
+	}
+	
+	private class NotFoundCommand extends BaseCommand implements Command
+	{
+		private final String commandName = "notFound";
+		@SuppressWarnings("unused")
+		private String wrongCommandName;
+		
+		public NotFoundCommand(String wrongCommandName)
+		{
+			this.wrongCommandName = wrongCommandName;
+		}
+
+		@Override
+		public String getName()
+		{
+			return commandName;
+		}
+
+		@Override
+		public void execute(String args)
+		{
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void commandHelp()
+		{
+			// TODO Auto-generated method stub			
+		}
+		
 	}
 
 }
