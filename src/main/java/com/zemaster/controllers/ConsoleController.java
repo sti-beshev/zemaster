@@ -26,6 +26,13 @@ public class ConsoleController implements ConsoleWriter
 
 		return consoleController;
 	}
+	
+	public void clearText()
+	{
+		consoleTextArea.setText("");
+		
+		consoleText.setLength(0);
+	}
 
 	@Override
 	public void writeToConsole(String text)

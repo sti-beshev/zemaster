@@ -32,7 +32,7 @@ public class CommandsLibrarian implements CommandsLibrary
 		return command;
 	}
 
-	public static CommandsLibrary getInstance()
+	public static CommandsLibrarian getInstance()
 	{
 		if (commandsLibrarian == null)
 			commandsLibrarian = new CommandsLibrarian();
