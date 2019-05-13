@@ -13,6 +13,8 @@
       			<menus>
       				<Menu mnemonicParsing="false" text="File">
       					<items>
+                        <MenuItem mnemonicParsing="false" onAction="#menuFileClearClicked" text="Clear" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
       						<MenuItem mnemonicParsing="false" onAction="#menuFileCloseClicked" text="Close" />
       					</items>
       				</Menu>

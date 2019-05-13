@@ -8,20 +8,18 @@ public class ClearCommand extends BaseCommand implements Command
 {
 	private ConsoleController consoleController;
 	
-	private final String commandName;
+	public final static String COMMAND_NAME = "clear";
 
 	public ClearCommand(ConsoleController consoleController)
 	{
 		super();
 		this.consoleController = consoleController;
-		
-		commandName = "clear";
 	}
 
 	@Override
 	public String getName()
 	{
-		return commandName;
+		return COMMAND_NAME;
 	}
 
 	@Override
