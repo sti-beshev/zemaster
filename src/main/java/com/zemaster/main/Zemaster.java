@@ -1,6 +1,7 @@
 package com.zemaster.main;
 
 import com.zemaster.command.CommandMaster;
+import com.zemaster.command.CommandsLibrarian;
 import com.zemaster.controllers.CommandLineController;
 import com.zemaster.controllers.FileController;
 
@@ -40,6 +41,6 @@ public class Zemaster extends Application
 
 	private void initSystem()
 	{
-		CommandLineController.getInstance().setCommander(new CommandMaster());
+		CommandLineController.getInstance().setCommander(new CommandMaster(CommandsLibrarian.getInstance()));
 	}
 }

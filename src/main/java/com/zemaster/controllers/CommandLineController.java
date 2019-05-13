@@ -53,10 +53,9 @@ public class CommandLineController
 		final String command = commandLineTextField	.getText()
 													.trim()
 													.toLowerCase();
+		commandLineTextField.clear();
 
 		commander.executeCommand(command);
-
-		commandLineTextField.clear();
 	}
 
 	class CommandLineTextFieldNotSetExceptio extends RuntimeException
