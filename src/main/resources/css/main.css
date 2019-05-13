@@ -43,10 +43,14 @@
     -fx-font-weight: bold;
 }
 
+.text-area
+{
+	-fx-text-fill: white;
+}
+
 .text-area .content
 {
 	-fx-background-color: #333333;
-	-fx-text-fill: white;
 }
 
 .text-field

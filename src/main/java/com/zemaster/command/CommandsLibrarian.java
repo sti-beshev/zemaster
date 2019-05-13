@@ -2,6 +2,8 @@ package com.zemaster.command;
 
 import java.util.HashMap;
 
+import com.zemaster.controllers.ConsoleController;
+
 public class CommandsLibrarian implements CommandsLibrary
 {
 
@@ -41,7 +43,6 @@ public class CommandsLibrarian implements CommandsLibrary
 	private class NotFoundCommand extends BaseCommand implements Command
 	{
 		private final String commandName = "notFound";
-		@SuppressWarnings("unused")
 		private String wrongCommandName;
 		
 		public NotFoundCommand(String wrongCommandName)
@@ -58,8 +59,7 @@ public class CommandsLibrarian implements CommandsLibrary
 		@Override
 		public void execute(String args)
 		{
-			// TODO Auto-generated method stub
-			
+			ConsoleController.getInstance().writeToConsole("Unknown command: " + wrongCommandName);
 		}
 
 		@Override

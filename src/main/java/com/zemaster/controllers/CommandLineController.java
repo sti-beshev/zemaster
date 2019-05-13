@@ -47,15 +47,19 @@ public class CommandLineController
 	private void commandEntered()
 	{
 		if (commander == null)
+		{
 			throw new CommandLineTextFieldNotSetExceptio(
 					"The TextField for the command line is not set in " + CommandLineController.class.getName());
+		}
+		else
+		{
+			final String command = commandLineTextField	.getText()
+														.trim()
+														.toLowerCase();
+			commandLineTextField.clear();
 
-		final String command = commandLineTextField	.getText()
-													.trim()
-													.toLowerCase();
-		commandLineTextField.clear();
-
-		commander.executeCommand(command);
+			commander.executeCommand(command);
+		}
 	}
 
 	class CommandLineTextFieldNotSetExceptio extends RuntimeException
