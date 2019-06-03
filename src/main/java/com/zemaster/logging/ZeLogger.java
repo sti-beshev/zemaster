@@ -1,5 +1,6 @@
 package com.zemaster.logging;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -11,12 +12,15 @@ public class ZeLogger implements ZemasterLogger
 {
 	private Logger logger;
 	
+	private final String logFolderPath = "log";
+	
 	public ZeLogger()
 	{
 		FileHandler fileTxt = null;
 		try
 		{
-			fileTxt = new FileHandler("zemaster.log", true);
+			createLogFolder(logFolderPath);
+			fileTxt = new FileHandler(logFolderPath + "/zemaster.log", true);
 		}
 		catch (SecurityException | IOException e)
 		{
@@ -24,9 +28,11 @@ public class ZeLogger implements ZemasterLogger
 		}
 
 		final SimpleFormatter formatterTxt = new SimpleFormatter();
-		final Logger logger = Logger.getLogger("Zemaster Logger");
 		fileTxt.setFormatter(formatterTxt);
+		
+		logger = Logger.getLogger("Zemaster Logger");
 		logger.addHandler(fileTxt);
+		logger.setUseParentHandlers(false);
 	}
 
 	@Override
@@ -46,5 +52,15 @@ public class ZeLogger implements ZemasterLogger
 	{
 		logger.log(Level.SEVERE, error, e);
 
+	}
+	
+	private void createLogFolder(String path)
+	{
+		File logDirectory = new File(path);
+		
+		if (! logDirectory.exists())
+		{
+			logDirectory.mkdir();
+		}
 	}
 }
