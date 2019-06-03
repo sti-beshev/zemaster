@@ -14,7 +14,7 @@ public class CommandMaster implements Commander
 	{
 		if (command.contains(" "))
 		{
-			final String commandName =  command.substring(0, command.indexOf(" "));
+			final String commandName = command.substring(0, command.indexOf(" "));
 			final String commandArgs = command.substring(command.indexOf(" ")+1, command.length());
 			
 			commandsLibrary.getCommand(commandName).execute(commandArgs);
