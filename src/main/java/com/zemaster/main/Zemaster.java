@@ -6,6 +6,8 @@ import com.zemaster.command.control.ClearCommand;
 import com.zemaster.controllers.CommandLineController;
 import com.zemaster.controllers.ConsoleController;
 import com.zemaster.controllers.FileController;
+import com.zemaster.logging.ZeLogMaster;
+import com.zemaster.logging.ZemasterLogger;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,8 @@ import javafx.stage.Stage;
 
 public class Zemaster extends Application
 {
+	
+	private ZemasterLogger logger = ZeLogMaster.getZeLogger();
 
 	public static void main(String[] args)
 	{
@@ -34,10 +38,22 @@ public class Zemaster extends Application
 		primaryStage.setScene(scene);
 
 		primaryStage.show();
+		
+		primaryStage.setOnCloseRequest(e -> {
+			
+			e.consume();
+			
+			logger.logInfo("*** Zamaster closed **************************************************");
+			
+			primaryStage.close();
+			
+		});
 
 		FileController.getInstance().setStage(primaryStage);
 
 		initSystem();
+		
+		logger.logInfo("*** Zamaster started **************************************************");
 
 	}
 

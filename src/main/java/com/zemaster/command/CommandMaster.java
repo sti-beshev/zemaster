@@ -6,7 +6,7 @@ import com.zemaster.logging.ZemasterLogger;
 public class CommandMaster implements Commander
 {
 	private CommandsLibrary commandsLibrary;
-	private ZemasterLogger zemasterLogger = ZeLogMaster.getZeLogger();
+	private ZemasterLogger logger = ZeLogMaster.getZeLogger();
 	
 	public CommandMaster(CommandsLibrary commandsLibrary)
 	{
@@ -16,7 +16,7 @@ public class CommandMaster implements Commander
 	@Override
 	public void executeCommand(String command)
 	{
-		zemasterLogger.logInfo("Executting command: " + command);
+		logger.logInfo("Executting command: " + command);
 		
 		if (command.contains(" "))
 		{
