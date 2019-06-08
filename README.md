@@ -4,11 +4,17 @@ This is a JavaFX app for a learning course.
 
 ## Setup steps
 
-* For Eclipse add access rule to the project path of the jre: 'Accessible javafx/**'.
-* For Eclipse install 'e(fx)clipse' plugin.
 * Install 'JavaFX Scene Builder'.
-* For Eclipse set the 'JavaFX Scene Builder' executable in windows >> Preferences >> JavaFX.
-* For Eclipse add the JavaFX lib to the build path to use JavaFX css.
+
+For Eclipse:
+
+* Add access rule to the project path of the jre: 'Accessible javafx/**'.
+* Install 'e(fx)clipse' plugin.
+* Set the 'JavaFX Scene Builder' executable in windows >> Preferences >> JavaFX.
+* Add the JavaFX lib to the build path to use JavaFX css.
+* Install plugin m2e-apt (for Dagger 2 annotations)
+* Select Automatically configure JDT AP in Window >> Preferences >> Maven (for Dagger 2 annotations)
+
 
 ## Other steps
 

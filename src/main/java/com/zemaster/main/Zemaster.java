@@ -6,6 +6,7 @@ import com.zemaster.command.control.ClearCommand;
 import com.zemaster.controllers.CommandLineController;
 import com.zemaster.controllers.ConsoleController;
 import com.zemaster.controllers.FileController;
+import com.zemaster.dagger.DaggerCommand;
 import com.zemaster.logging.ZeLogMaster;
 import com.zemaster.logging.ZemasterLogger;
 
@@ -67,5 +68,6 @@ public class Zemaster extends Application
 	private void initCommands()
 	{
 		CommandsLibrarian.getInstance().addCommand(new ClearCommand(ConsoleController.getInstance()));
+		CommandsLibrarian.getInstance().addCommand(new DaggerCommand());
 	}
 }
