@@ -15,13 +15,17 @@
       					<items>
                         <MenuItem mnemonicParsing="false" onAction="#menuFileClearClicked" text="Clear" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-      						<MenuItem mnemonicParsing="false" onAction="#menuFileCloseClicked" text="Close" />
+      					<MenuItem mnemonicParsing="false" onAction="#menuFileCloseClicked" text="Close" />
       					</items>
       				</Menu>
       				<Menu mnemonicParsing="false" text="Help">
       					<items>
-      						<MenuItem mnemonicParsing="false" onAction="#menuHelpAboutClicked" text="About" />
+      						<MenuItem mnemonicParsing="false" onAction="#menuHelpListCommandsClicked" text="List Commands" />
       					</items>
+      					<SeparatorMenuItem mnemonicParsing="false" />
+      					<items>
+      						<MenuItem mnemonicParsing="false" onAction="#menuHelpAboutClicked" text="About" />
+      					</items>   					
       				</Menu>
       			</menus>
       		</MenuBar>

@@ -5,6 +5,7 @@ import com.zemaster.command.Commander;
 import com.zemaster.command.CommandsLibrarian;
 import com.zemaster.command.CommandsLibrary;
 import com.zemaster.command.control.ClearCommand;
+import com.zemaster.command.control.HelpCommand;
 import com.zemaster.controllers.CommandLineController;
 import com.zemaster.controllers.ConsoleController;
 import com.zemaster.controllers.FileController;
@@ -47,5 +48,10 @@ public class MainController
 	public void menuFileClearClicked()
 	{
 		commander.executeCommand(ClearCommand.COMMAND_NAME);
+	}
+	
+	public void menuHelpListCommandsClicked()
+	{
+		commander.executeCommand(HelpCommand.COMMAND_NAME);
 	}
 }
