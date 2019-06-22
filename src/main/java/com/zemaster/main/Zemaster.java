@@ -3,6 +3,7 @@ package com.zemaster.main;
 import com.zemaster.command.CommandMaster;
 import com.zemaster.command.CommandsLibrarian;
 import com.zemaster.command.control.ClearCommand;
+import com.zemaster.command.control.HelpCommand;
 import com.zemaster.controllers.CommandLineController;
 import com.zemaster.controllers.ConsoleController;
 import com.zemaster.controllers.FileController;
@@ -68,6 +69,7 @@ public class Zemaster extends Application
 	private void initCommands()
 	{
 		CommandsLibrarian.getInstance().addCommand(new ClearCommand(ConsoleController.getInstance()));
+		CommandsLibrarian.getInstance().addCommand(new HelpCommand(CommandsLibrarian.getInstance()));
 		CommandsLibrarian.getInstance().addCommand(new DaggerCommand());
 	}
 }

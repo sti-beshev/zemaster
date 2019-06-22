@@ -1,6 +1,8 @@
 package com.zemaster.command;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import com.zemaster.controllers.ConsoleController;
 
@@ -30,6 +32,12 @@ public class CommandsLibrarian implements CommandsLibrary
 			command = new NotFoundCommand(commandName);
 		
 		return command;
+	}
+	
+	@Override
+	public List<Command> getAllCommands()
+	{		
+		return new ArrayList<>(commandsList.values());
 	}
 
 	public static CommandsLibrarian getInstance()
@@ -69,5 +77,4 @@ public class CommandsLibrarian implements CommandsLibrary
 		}
 		
 	}
-
 }

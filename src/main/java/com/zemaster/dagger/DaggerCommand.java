@@ -9,13 +9,13 @@ public class DaggerCommand extends BaseCommand implements Command
 	
 	public DaggerCommand()
 	{
-		this.commandName = "dagger";
+		
 	}
 
 	@Override
 	public String getName()
 	{	
-		return commandName;
+		return "dagger";
 	}
 
 	@Override
