@@ -1,5 +1,7 @@
 package com.zemaster.dagger;
 
+import javax.inject.Inject;
+
 import com.zemaster.command.BaseCommand;
 import com.zemaster.command.Command;
 import com.zemaster.controllers.ConsoleController;
@@ -7,10 +9,7 @@ import com.zemaster.controllers.ConsoleController;
 public class DaggerCommand extends BaseCommand implements Command
 {
 	
-	public DaggerCommand()
-	{
-		
-	}
+	@Inject FieldInjector fieldInjector;
 
 	@Override
 	public String getName()
@@ -29,13 +28,13 @@ public class DaggerCommand extends BaseCommand implements Command
 		}
 		else
 		{
-			if (args.equals("-h"))
+			switch (args)
 			{
-				commandHelp();
-			}
-			else
-			{
-				ConsoleController.getInstance().writeToConsole("Unknown argument: " + args);
+				case "-h": commandHelp(); break;
+				
+				case "-f": fieldTrip(); break;
+				
+				default: ConsoleController.getInstance().writeToConsole("Unknown argument: " + args);
 			}
 		}
 
@@ -45,6 +44,13 @@ public class DaggerCommand extends BaseCommand implements Command
 	public void commandHelp()
 	{
 		ConsoleController.getInstance().writeToConsole("dagger - A demo of Dagger 2");
+	}
+	
+	public void fieldTrip()
+	{
+		DaggerFieldInjectorComponent.create().inject(this);
+		
+		ConsoleController.getInstance().writeToConsole(fieldInjector.sayHello());
 	}
 
 }
