@@ -9,8 +9,13 @@ import com.zemaster.controllers.ConsoleController;
 public class DaggerCommand extends BaseCommand implements Command
 {
 	
+	final static String HELP_MESSAGE = "dagger - A demo of Dagger 2 \n\n" 
+																+ "-f	          field injection demo \n"
+																+ "-d         injection wit module demo \n";
+	
 	@Inject FieldInjector fieldInjector;
 	@Inject ZeeDaggerMaster zeeDaggerMaster;
+	
 
 	@Override
 	public String getName()
@@ -46,7 +51,7 @@ public class DaggerCommand extends BaseCommand implements Command
 	@Override
 	public void commandHelp()
 	{
-		ConsoleController.getInstance().writeToConsole("dagger - A demo of Dagger 2");
+		ConsoleController.getInstance().writeToConsole(HELP_MESSAGE);
 	}
 	
 	public void fieldTrip()
