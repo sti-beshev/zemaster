@@ -10,6 +10,7 @@ public class DaggerCommand extends BaseCommand implements Command
 {
 	
 	@Inject FieldInjector fieldInjector;
+	@Inject ZeeDaggerMaster zeeDaggerMaster;
 
 	@Override
 	public String getName()
@@ -34,6 +35,8 @@ public class DaggerCommand extends BaseCommand implements Command
 				
 				case "-f": fieldTrip(); break;
 				
+				case "-d": daggerMe(); break;
+				
 				default: ConsoleController.getInstance().writeToConsole("Unknown argument: " + args);
 			}
 		}
@@ -51,5 +54,12 @@ public class DaggerCommand extends BaseCommand implements Command
 		DaggerFieldInjectorComponent.create().inject(this);
 		
 		ConsoleController.getInstance().writeToConsole(fieldInjector.sayHello());
+	}
+	
+	public void daggerMe()
+	{
+		DaggerZeeDaggerMasterComponent.create().inject(this);
+		
+		ConsoleController.getInstance().writeToConsole(zeeDaggerMaster.getBlade());
 	}
 }
