@@ -52,5 +52,4 @@ public class DaggerCommand extends BaseCommand implements Command
 		
 		ConsoleController.getInstance().writeToConsole(fieldInjector.sayHello());
 	}
-
 }

@@ -17,5 +17,11 @@ public class ConstInjector
 		return daggerMessage.getMessage();
 	}
 	
+	@Inject
+	public void enabledMethodInjector(MethodInjectore methodInjectore)
+	{
+		methodInjectore.setListener(this);
+	}
+	
 	
 }
