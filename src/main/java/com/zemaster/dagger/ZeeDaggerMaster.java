@@ -6,6 +6,8 @@ public class ZeeDaggerMaster
 {
 	private NormalMessage normalMessage;
 	
+	@Inject Staby staby;
+	
 	@Inject
 	public ZeeDaggerMaster(NormalMessage normalMessage)
 	{
@@ -15,5 +17,10 @@ public class ZeeDaggerMaster
 	public String getBlade()
 	{
 		return normalMessage.getMessage();
+	}
+	
+	public String stab()
+	{
+		return staby.stabMe();
 	}
 }

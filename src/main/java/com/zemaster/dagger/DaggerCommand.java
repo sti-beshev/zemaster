@@ -11,10 +11,16 @@ public class DaggerCommand extends BaseCommand implements Command
 	
 	final static String HELP_MESSAGE = "dagger - A demo of Dagger 2 \n\n" 
 																+ "-f	          field injection demo \n"
-																+ "-d         injection wit module demo \n";
+																+ "-d         injection wit module demo \n"
+																+ "-s          interface injection demo";
 	
 	@Inject FieldInjector fieldInjector;
 	@Inject ZeeDaggerMaster zeeDaggerMaster;
+	
+	public DaggerCommand()
+	{
+		DaggerZeeDaggerMasterComponent.create().inject(this);
+	}
 	
 
 	@Override
@@ -42,10 +48,11 @@ public class DaggerCommand extends BaseCommand implements Command
 				
 				case "-d": daggerMe(); break;
 				
+				case "-s": stabMe(); break;
+				
 				default: ConsoleController.getInstance().writeToConsole("Unknown argument: " + args);
 			}
 		}
-
 	}
 
 	@Override
@@ -62,9 +69,12 @@ public class DaggerCommand extends BaseCommand implements Command
 	}
 	
 	public void daggerMe()
-	{
-		DaggerZeeDaggerMasterComponent.create().inject(this);
-		
+	{		
 		ConsoleController.getInstance().writeToConsole(zeeDaggerMaster.getBlade());
+	}
+	
+	public void stabMe()
+	{
+		ConsoleController.getInstance().writeToConsole(zeeDaggerMaster.stab());
 	}
 }
